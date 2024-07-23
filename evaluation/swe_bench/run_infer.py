@@ -250,6 +250,7 @@ def process_instance(
             'We are currently solving the following issue within our repository. Here is the issue text:\n'
             '--- BEGIN ISSUE ---\n'
             f'{instance.problem_statement}\n'
+            'Only change the file src/_pytest/python.py. Make changes to the function _showfixtures_main only.'
             '--- END ISSUE ---\n\n'
         )
 
@@ -295,6 +296,7 @@ IMPORTANT TIPS:
         )
         if USE_HINT_TEXT and instance.hints_text:
             instruction += f'# Hints\n{instance.hints_text}\n\n'
+        instruction += 'Only change the file src/_pytest/python.py. Make changes to the function _showfixtures_main only.'
         instruction += (
             'IMPORTANT: You should ONLY interact with the environment provided to you AND NEVER ASK FOR HUMAN HELP.\n'
             'You should NOT modify any existing test case files. If needed, you can add new test cases in a NEW file to reproduce the issue.\n'
